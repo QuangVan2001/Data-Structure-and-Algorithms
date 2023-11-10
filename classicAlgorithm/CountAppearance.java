@@ -21,8 +21,6 @@ public class CountAppearance {
 
 
 
-
-
     //input: "phama";
     //output: [1,1,2,1];
     public static int[] solution2(String s){
@@ -37,6 +35,7 @@ public class CountAppearance {
         }
         return result;
     }
+
 
     //input: "phama";
     //output: [1,1,2,1];

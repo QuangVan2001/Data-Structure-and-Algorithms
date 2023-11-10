@@ -33,6 +33,8 @@ public class LongestSubstringWithoutRepeatingCharacters {
         return  maxLength;
     }
 
+    //Time : 0(N)
+    //Space: 0(N)
     public static int solution2(String s){
         if(s == null || s.length()==0) return 0;
         int i = 0, j = 0, max =0;

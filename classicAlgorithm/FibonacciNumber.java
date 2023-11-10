@@ -32,7 +32,6 @@ public class FibonacciNumber {
 
 
 
-
     public static void main(String[] args) {
         long startTime= System.currentTimeMillis();
         System.out.println(new FibonacciNumber().solution1(30));
