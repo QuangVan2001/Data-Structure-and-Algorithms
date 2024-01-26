@@ -1,5 +1,6 @@
 package classicAlgorithm;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -16,6 +17,7 @@ public class TwoSum {
         return new int[]{};
     }
 
+
     public int[] solution2( int[] nums, int target){
         Map<Integer, Integer> map = new HashMap<>();
         for(int i = 0; i < nums.length; i++){
@@ -28,6 +30,20 @@ public class TwoSum {
     }
 
 
+    public static int[] twosum(int[] nums, int target){
+        Map<Integer, Integer> map = new HashMap<>();
+        for(int i = 0; i< nums.length; i++){
+            if(map.containsKey(target-nums[i])){
+                return new int[]{map.get(target-nums[i]), i};
+            }
+            map.put(nums[i],i );
+
+        }
+        return new int[]{};
+    }
+
+
+
 
     public static void main(String[] args) {
         int[] nums = { 11,15, 2, 7};
@@ -37,9 +53,9 @@ public class TwoSum {
 //        for (int x : result){
 //            System.out.print(x + " ");
 //        }
-        System.out.println();
-        for (int x : results){
-            System.out.print(x + " ");
-        }
+        System.out.println(Arrays.toString(results));
+//        for (int x : results){
+//            System.out.print(x + " ");
+//        }
     }
 }

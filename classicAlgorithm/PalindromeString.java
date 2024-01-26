@@ -42,12 +42,14 @@ public class PalindromeString {
 
 
 
+
+
     public static void main(String[] args) {
         String s1 = "A man, a plan, a canal: Panama";
        String s2 = "race a car";
         String s3 = " ";
         String s4  = "racabacar";
-//        System.out.println(new PalindromeString().ValidPalindrome(s1));
+  // System.out.println(new PalindromeString().test(s1));
 //       System.out.println(new PalindromeString().ValidPalindrome(s2));
 //       System.out.println(new PalindromeString().ValidPalindrome(s3));
 //        System.out.println(new PalindromeString().ValidPalindrome(s4));

@@ -51,14 +51,61 @@ public class QuickSort {
 
 
 
-    public static void main(String[] args) {
-        int[] a = {1,5,3,2,8,7,6,4};
-        quickSortsss(a, 0, a.length - 1);
-        System.out.println(Arrays.toString(a));
+//    public static void main(String[] args) {
+//        int[] a = {1,5,3,2,8,7,6,4};
+//        quicksorts(a, 0, a.length - 1);
+//        System.out.println(Arrays.toString(a));
+//
+//    }
+
+    public static void main(String[] args){
+        int[] nums = {6,7,8,5,4,1,2,3};
+        QuickSort.sortArray(nums);
+        System.out.println(Arrays.toString(nums));
+    }
+
+    public static int[] sortArray(int[] nums){
+        return sapxepnhanh(nums, 0, nums.length-1);
+    }
+
+    public static int[] sapxepnhanh(int[] nums, int left, int right){
+        if( left > right) return  new int[0];
+        if(left == right){
+            int[] singleElement = {nums[left]};
+            return singleElement;
+        }
+        int pivot = nums[(left+right)/2];
+        //partition
+        int k = chiaNho(nums, left, right, pivot);
+        // recursion
+        sapxepnhanh(nums, left, k-1);
+        sapxepnhanh(nums, k, right);
+
+        return nums;
 
     }
 
+    public static int chiaNho(int[] nums, int left, int right, int pivot){
+        int iL = left;
+        int iR = right;
+        while (iL <= iR){
+            while (nums[iL] < pivot){
+                iL++;
 
+            }
+            while (nums[iR] > pivot){
+                iR--;
+            }
+            while (iL <=iR){
+                int temp =  nums[iL];
+                nums[iL] = nums[iR];
+                nums[iR] = temp;
+                iL++;
+                iR--;
+            }
+        }
+        return iL;
+    }
    public static void quicksorts(int[] nums, int left, int right){
         if(left >= right ) return;
 
@@ -69,6 +116,7 @@ public class QuickSort {
        quicksorts(nums, left, k-1);
        quicksorts(nums, k, right);
    }
+
    public static int part(int[] nums, int left, int right, int key){
         int iL = left;
         int iR = right;
@@ -92,39 +140,5 @@ public class QuickSort {
    }
 
 
-   public static void quickSortsss(int[] nums, int left, int right){
-        if(left >= right) return;
-        // b1: chon khoa
-        int key = nums[(left +right)/2];
 
-        // b2: phan bo lai mang theo khoa
-        int k = chia(nums, left, right, key);
-        quickSortsss(nums, left, k-1);
-        quickSortsss(nums, k, right);
-
-   }
-
-   public static int chia(int[] nums, int left, int right, int key){
-        int iL = left;
-        int iR = right;
-        while(iL <= iR){
-            // vois iL tim phan tu cos gia tri >= key de doi cho
-            while (nums[iL] < key){
-                iL++;
-
-            }
-            while (nums[iR] > key){
-                iR--;
-
-            }
-            if(iL <= iR){
-                int temp = nums[iL];
-                nums[iL] = nums[iR];
-                nums[iR] = temp;
-                iL++;
-                iR--;
-            }
-        }
-        return iL;
-   }
 }

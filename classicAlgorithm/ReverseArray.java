@@ -2,18 +2,18 @@ package classicAlgorithm;
 
 public class ReverseArray {
 
-    public int[] solution(int[] nums) {
-        int left = 0;
-        int right = nums.length - 1;
-        while (left < right) {
-            int temp = nums[left];
-            nums[left] = nums[right];
-            nums[right] = temp;
-            left++;
-            right--;
+        public int[] solution(int[] nums) {
+            int left = 0;
+            int right = nums.length - 1;
+            while (left < right) {
+                int temp = nums[left];
+                nums[left] = nums[right];
+                nums[right] = temp;
+                left++;
+                right--;
+            }
+            return nums;
         }
-        return nums;
-    }
 
     public String[] solution2(String[] strings) {
         int i = 0;

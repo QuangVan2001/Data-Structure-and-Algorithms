@@ -19,6 +19,10 @@ public class DuplicateNumber {
         }
         return nums.length;
     }
+
+
+
+
     //input: [1,2,4,5,2]
     //output: [1,4,5]
     public int[] printElementDoNotDuplicate(int[] nums){
@@ -28,7 +32,20 @@ public class DuplicateNumber {
                 set.remove(num);
             }
         }
+       // return set.stream().mapToInt(i -> i).toArray();
         return set.stream().mapToInt(i -> i).toArray();
+    }
+
+
+
+    public int[] test(int[] nums){
+        HashSet<Integer> set = new HashSet<>();
+        for(int num: nums){
+            if(!set.add(num)){
+                set.remove(num);
+            }
+        }
+        return set.stream().mapToInt(Integer::intValue).toArray();
     }
 
     //input: [1,2,4,5,2]
@@ -63,6 +80,9 @@ public class DuplicateNumber {
         int[] nums= {1,3,4,2,2};
         int[] result = new  DuplicateNumber().printElementDoNotDuplicate(nums);
         System.out.println(Arrays.toString(result));
+
+        System.out.println();
+
 
 
 

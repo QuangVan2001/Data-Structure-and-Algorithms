@@ -17,6 +17,8 @@ public class SieveOfEratosthenes {
         return isPrime;
     }
 
+
+
     public static void main(String[] args) {
         SieveOfEratosthenes sieveOfEratosthenes = new SieveOfEratosthenes();
         int n = 10;

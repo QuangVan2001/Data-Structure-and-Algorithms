@@ -1,7 +1,7 @@
 package theBrownBox;
 
 public class BinarySearch {
-    public int solution(int[] nums, int target){
+    public static int solution(int[] nums, int target){
         int left = 0;
         int right = nums.length -1;
         while (left <= right){
@@ -21,10 +21,11 @@ public class BinarySearch {
 
 
 
+
     public static void main(String[] args) {
         BinarySearch search = new BinarySearch();
         int[] nums = {1,2,3,7,9,12};
         int target = 9;
-        System.out.println(search.solution(nums, target));
+        System.out.println(solution(nums, target));
     }
 }

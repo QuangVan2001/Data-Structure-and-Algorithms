@@ -2,7 +2,7 @@ package classicAlgorithm;
 
 public class StringExist {
 
-    public boolean isExist(String[] s, String chuoi){
+    public static boolean isExist(String[] s, String chuoi){
         if(s.length == 0  || chuoi.isEmpty()) return false;
         for(String s1: s){
             if(s1.equals(chuoi)){
@@ -18,9 +18,13 @@ public class StringExist {
 
 
 
+
+
+
+
     public static void main(String[] args) {
         String[] strings = {"abb", "add", "aaa","bfb"};
-        String chuoi = "a";
-        System.out.println(new StringExist().isExist(strings, chuoi));
+        String chuoi = "aaa";
+        System.out.println(isExist(strings, chuoi));
     }
 }

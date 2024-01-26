@@ -31,15 +31,23 @@ public class BubbleSort {
     }
 
 
-    public static void main(String[] args) {
 
-
-        int[] a = {6,3,7,2,10,4,9};
-        bub(a);
-        for (int num : a){
+    public static void main(String[] args){
+        int[] nums = {5,3,6,3,8};
+        for(int num: nums){
             System.out.print(num + " ");
         }
-
     }
+
+//    public static void main(String[] args) {
+//
+//
+//        int[] a = {6,3,7,2,10,4,9};
+//        bub(a);
+//        for (int num : a){
+//            System.out.print(num + " ");
+//        }
+//
+//    }
 
 }
