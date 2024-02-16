@@ -1,0 +1,2 @@
+JMH S 32 classicAlgorithm.DuplicateNumber S 81 classicAlgorithm.jmh_generated.DuplicateNumber_printElementDoNotDuplicate_jmhTest S 26 printElementDoNotDuplicate S 11 AverageTime E A 1 1 1 E E E E E E E E E E E E E E U 11 NANOSECONDS E E 
+JMH S 32 classicAlgorithm.DuplicateNumber S 82 classicAlgorithm.jmh_generated.DuplicateNumber_printElementDoNotDuplicate2_jmhTest S 27 printElementDoNotDuplicate2 S 11 AverageTime E A 1 1 1 E E E E E E E E E E E E E E U 11 NANOSECONDS E E 
