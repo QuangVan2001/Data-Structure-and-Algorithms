@@ -36,6 +36,7 @@ public class RansomNote {
         }
         return true;
     }
+
     public static boolean test(String s1, String s2){
         Map<Character, Integer> map = new  HashMap<>();
         for(char c: s2.toCharArray()){

@@ -23,15 +23,25 @@ public class MaxSubArray {
         return max_so_far;
     }
 
-    //Cui bap solution; O(N^2)
+    //Cui bap solution; O(N^2)// Time Limit Exceeded
     public static int badSolution(int[] nums){
-        int maxSum = 0;
+        int maxSum = Integer.MIN_VALUE;
         for(int i = 0; i< nums.length; i++){
             int currentSum = 0;
             for(int j = i; j < nums.length; j++){
                 currentSum = currentSum + nums[j];
                 maxSum = Math.max(currentSum, maxSum);
             }
+        }
+        return maxSum;
+    }
+
+    public static int test(int[] nums){
+        int maxSum = nums[0];
+        int currentSum = nums[0];
+        for(int i = 1; i< nums.length; i++){
+            currentSum = Math.max(nums[i], nums[i]+ currentSum);
+            maxSum = Math.max(maxSum, currentSum);
         }
         return maxSum;
     }

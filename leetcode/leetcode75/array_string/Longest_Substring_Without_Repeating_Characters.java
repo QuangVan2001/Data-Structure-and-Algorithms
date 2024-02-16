@@ -23,21 +23,41 @@ public class Longest_Substring_Without_Repeating_Characters {
 //    Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
 //thời gian là O(N) và về không gian là O(M)
     public static int lengthOfLongestSubstring(String s) {
-        if(s == null || s.length()==0) return 0;
-        int i = 0, j = 0, max =0;
+        if(s == null || s.length() == 0) return 0;
+        int startIndex = 0, endIndex = 0, maxlength = 0;
         Set<Character> set = new HashSet<>();
-        while (i < s.length()){
-            char c = s.charAt(i);
-            while(set.contains(c)){
-                set.remove(s.charAt(j));
-                ++j;
+        while(endIndex < s.length()){
+            char c  = s.charAt(endIndex);
+            while (set.contains(c)){
+                set.remove(s.charAt(startIndex));
+                startIndex++;
             }
             set.add(c);
-            max = Math.max(max, i-j+1);
-            ++i;
+            maxlength = Math.max(maxlength, endIndex-startIndex+1);
+            endIndex++;
         }
-        return max;
+        return maxlength;
     }
+    public static int test(String s){
+        if(s == null || s.length() == 0) return 0;
+        int startIndex = 0;
+        int endIndex = 0;
+        int maxLength = 0;
+        Set<Character> set  = new HashSet<>();
+        while (endIndex<s.length()){
+            char c = s.charAt(endIndex);
+            while (set.contains(c)){
+                set.remove(s.charAt(startIndex));
+                startIndex++;
+            }
+            set.add(c);
+            maxLength = Math.max(maxLength, endIndex-startIndex+1);
+            endIndex++;
+        }
+        return maxLength;
+    }
+
+
 
 
 
@@ -68,8 +88,8 @@ public class Longest_Substring_Without_Repeating_Characters {
 
 
     public static void main(String[] args) {
-        System.out.println(lengthOfLongestSubstring2("abcabcbb"));
+ //       System.out.println(lengthOfLongestSubstring2("abcabcbb"));
 //        System.out.println(lengthOfLongestSubstring("bbbbb"));
-//        System.out.println(lengthOfLongestSubstring("pwwkew"));
+        System.out.println(lengthOfLongestSubstring("pwwkew"));
     }
 }
